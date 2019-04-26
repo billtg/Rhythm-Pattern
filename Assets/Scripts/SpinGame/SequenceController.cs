@@ -14,6 +14,7 @@ public class SequenceController : MonoBehaviour {
     public int simultaneousRings;
     public int activeRing = 0;
     public RingParent[] ringParents;
+    public GameObject ringPrefab;
 
     [Header("Line and UI")]
     public Animator lineAnimator;
@@ -21,12 +22,43 @@ public class SequenceController : MonoBehaviour {
 
     private void Awake()
     {
+        LoadParameters();
         ringParents = GetComponentsInChildren<RingParent>();
+    }
+
+    private void LoadParameters()
+    {
+        simultaneousRings = SongLoader.instance.activeSong.simultaneousRings;
+
+        //Instantiate the rings
+        for (int i = 0; i < SongLoader.instance.activeSong.rings.Length; i++)
+        {
+            Debug.Log("Instantiating Ring " + i.ToString());
+            GameObject newRing = Instantiate(ringPrefab);
+            RingParent ringParent = newRing.GetComponent<RingParent>();
+            newRing.transform.SetParent(this.gameObject.transform);
+
+            ringParent.notesToTelegraph = SongLoader.instance.activeSong.rings[i].notesToTelegraph;
+            ringParent.ringKeycode = SongLoader.instance.activeSong.rings[i].ringKeycode;
+            ringParent.ringTrack = SongLoader.instance.activeSong.rings[i].ringTrack;
+            ringParent.ringAudio = SongLoader.instance.activeSong.rings[i].ringSample;
+            ringParent.beats = new List<float>();
+            for (int j = 0; j < SongLoader.instance.activeSong.rings[i].beats.Count; j++)
+            {
+                Debug.Log("Adding beat " + j.ToString() + " to ring " + i.ToString());
+                ringParent.beats.Add(SongLoader.instance.activeSong.rings[i].beats[j]);
+            }
+
+            ringParent.melodyNotes = new List<AudioClip>();
+            for (int j = 0; j < SongLoader.instance.activeSong.rings[i].melodyNotes.Count; j++)
+            {
+                ringParent.melodyNotes.Add(SongLoader.instance.activeSong.rings[i].melodyNotes[j]);
+            }
+        }
     }
 
     private void Start()
     {
-
         PopulateTracks();
         //Populate Rings
         for (int i = 0; i < ringParents.Length; i++)
@@ -162,5 +194,19 @@ public class SequenceController : MonoBehaviour {
         Debug.Log("Sequence Complete!");
         lineAnimator.SetTrigger("complete");
         Conductor.instance.StopMetronome();
+
+
+    }
+
+    private void UpdateSongsCompleted()
+    {
+        switch (SongLoader.instance.currentSongType)
+        {
+            case SongType.Dance:
+                PlayerPrefs.SetInt("Dance", SongLoader.instance.songIndex + 1);
+                break;
+            case SongType.Hiphop:
+                break;
+        }
     }
 }

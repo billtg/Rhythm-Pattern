@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelButton : MonoBehaviour
 {
@@ -77,7 +78,10 @@ public class LevelButton : MonoBehaviour
         if (!clickable) return;
 
         Debug.Log("Ding!");
-        //Load the song up into the main scene
+        //Load the song up into the main scenes
+        SongLoader.instance.LoadScene(songNumber, songType);
+        Debug.Log("Loading Main Scene");
+        SceneManager.LoadScene(1);
     }
 
     private void OnMouseOver()

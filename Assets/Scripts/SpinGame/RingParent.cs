@@ -26,12 +26,13 @@ public class RingParent : MonoBehaviour {
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        sequenceController = GetComponentInParent<SequenceController>();
-        circleScripts = new CircleScript[beats.Count];
     }
 
     public void PopulateRing(float ringDistance)
     {
+        sequenceController = GetComponentInParent<SequenceController>();
+        circleScripts = new CircleScript[beats.Count];
+
         for (int i = 0; i <beats.Count; i++)
         {
             //Instantiate the circle

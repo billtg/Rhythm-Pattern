@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca36fbcc38f87314d9f095aad4e855f9, type: 3}
+  m_Name: Dance1
+  m_EditorClassIdentifier: 
+  bpm: 132
+  metronomeClip: {fileID: 8300000, guid: c00082554e9a7404c823835f7a20d8d2, type: 3}
+  timeSig: 16
+  beatThreshold: 0.45
+  simultaneousRings: 1
+  rings:
+  - notesToTelegraph: 2
+    ringKeycode: 273
+    ringTrack: {fileID: 8300000, guid: 98095d5807ac6f048883bdc4230dddb1, type: 3}
+    ringSample: {fileID: 8300000, guid: 7658c3fe2fd26364081410f9bd7b97ce, type: 3}
+    beats:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    melodyNotes: []
+  - notesToTelegraph: 1
+    ringKeycode: 275
+    ringTrack: {fileID: 8300000, guid: cdf23aff0f0d9d643a3286ddff331c0f, type: 3}
+    ringSample: {fileID: 8300000, guid: b9de7e93cb84c8441acfd2d2817a4529, type: 3}
+    beats:
+    - 2
+    - 4
+    - 6
+    - 8
+    - 10
+    - 12
+    - 14
+    - 16
+    melodyNotes: []
+  - notesToTelegraph: 2
+    ringKeycode: 274
+    ringTrack: {fileID: 8300000, guid: b3949cb6ae82b88418031867ddfa062c, type: 3}
+    ringSample: {fileID: 8300000, guid: edda626d75799f241a67f99ae7102a82, type: 3}
+    beats:
+    - 1
+    - 2.5
+    - 3.5
+    - 5
+    - 7.5
+    - 9
+    - 9.5
+    - 10.5
+    - 11.5
+    - 12.5
+    - 13
+    - 15.5
+    melodyNotes: []
+  - notesToTelegraph: 2
+    ringKeycode: 273
+    ringTrack: {fileID: 8300000, guid: 684ea2a26d0052443bd8b359891de66d, type: 3}
+    ringSample: {fileID: 8300000, guid: 0f70db8cc5d2d104e8031cd8997f5d6c, type: 3}
+    beats:
+    - 1
+    - 2.5
+    - 3.5
+    - 5
+    - 9
+    - 10.5
+    - 11.5
+    - 13
+    melodyNotes: []

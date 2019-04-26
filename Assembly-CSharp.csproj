@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\SpinGame\InputManager.cs" />
     <Compile Include="Assets\Scripts\SpinGame\RingParent.cs" />
     <Compile Include="Assets\Scripts\SpinGame\SequenceController.cs" />
+    <Compile Include="Assets\Scripts\SpinGame\SongLoader.cs" />
+    <Compile Include="Assets\Scripts\SpinGame\SongObject.cs" />
     <Compile Include="Assets\Scripts\SpinGame\syncedSpin.cs" />
     <Compile Include="Assets\Scripts\SpinGame\UI\LevelButton.cs" />
     <Compile Include="Assets\Scripts\SpinGame\UI\Loopcontroller.cs" />

@@ -49,6 +49,17 @@ public class Conductor : MonoBehaviour {
     private void Awake()
     {
         instance = this;
+
+        //Load song parameters from SongLoader
+        LoadParameters();
+    }
+
+    private void LoadParameters()
+    {
+        Debug.Log("Loading conductor parameters");
+        beatTempo = SongLoader.instance.activeSong.bpm;
+        musicSource.clip = SongLoader.instance.activeSong.metronomeClip;
+        timeSig = SongLoader.instance.activeSong.timeSig;
     }
 
     // Use this for initialization
