@@ -8,7 +8,9 @@ public class Conductor : MonoBehaviour {
     //Static song information
     public float beatTempo;
     public float secPerBeat;
-    public float offsetToFirstBeat;
+    public float offestInBeats = 4;
+    private float offsetToFirstBeat;
+    public float startingPosition;
     public AudioSource musicSource;
     public AudioSource[] loops;
     public AudioListener audioListener;
@@ -35,6 +37,7 @@ public class Conductor : MonoBehaviour {
 
     //UI
     public Text loopText;
+    public Animator getReadyAnimator;
 
     //static note information
     public float timeSig;
@@ -55,9 +58,16 @@ public class Conductor : MonoBehaviour {
         pauseTimeStamp = -1f;
         //Calculate the number of seconds per beat
         secPerBeat = 60f / beatTempo;
+        //Figure out 1 measure lead in
+        //Set the song to n-1 measures into the loop
+        offsetToFirstBeat = offestInBeats * secPerBeat;
+        startingPosition = timeSig * secPerBeat - offsetToFirstBeat;
+        songPosition = startingPosition;
+        songPosInBeats = songPosition / secPerBeat;
+        loopPosInBeats = songPosInBeats + 1;
+        loopPosInAnalog = (loopPosInBeats - 1) / timeSig;
         //Run the countdown preparing to start
         StartCoroutine(CountDown());
-
     }
 
 	// Update is called once per frame
@@ -109,16 +119,18 @@ public class Conductor : MonoBehaviour {
     {
         Debug.Log("Starting Music");
         //Record the time when the audio starts
-        dspSongTime = (float)AudioSettings.dspTime + offsetToFirstBeat;
+        dspSongTime = (float)AudioSettings.dspTime - startingPosition;
 
         //start the song
         musicSource.Play();
+        //Start the track loops
         for (int i=0; i<loops.Length; i++)
         {
             loops[i].volume = 0;
-            loops[i].Play();
+            //loops[i].Play();
+            Debug.Log("Track starting");
+            loops[i].PlayScheduled(dspSongTime + startingPosition + offsetToFirstBeat);
         }
-
 
         musicStarted = true;
     }
@@ -129,55 +141,55 @@ public class Conductor : MonoBehaviour {
         //Written to handle the looping
         if (beat <= beatThreshold + 1)
         {
-            Debug.Log("Case 1, beat is close to 1");
+            //Debug.Log("Case 1, beat is close to 1");
             if (loopPosInBeats > beat + beatThreshold)
             {
                 if (loopPosInBeats >= (beat + timeSig - 1) + beatThreshold)
                 {
-                    Debug.Log("LoopPos just below loop point");
+                    //Debug.Log("LoopPos just below loop point");
                     return true;
                 } else
                 {
-                    Debug.Log("LoopPos not within beat threshold");
+                    //Debug.Log("LoopPos not within beat threshold");
                 }
             } else
             {
-                Debug.Log("Case 1, loopPos between loop point and beat threshold");
+                //Debug.Log("Case 1, loopPos between loop point and beat threshold");
             }
         }
         else if (beat < (timeSig + 1 - beatThreshold))
         {
-            Debug.Log("Case 2, beat is far from loop point.");
+            //Debug.Log("Case 2, beat is far from loop point.");
             if (loopPosInBeats >= beat-beatThreshold && loopPosInBeats <= beat + beatThreshold)
             {
-                Debug.Log("LoopPos within threshold");
+                //Debug.Log("LoopPos within threshold");
                 return true;
             }
         }
         else if (beat >= (timeSig + 1 - beatThreshold))
         {
-            Debug.Log("Case 3, beat is close to loop point");
+            //Debug.Log("Case 3, beat is close to loop point");
             if (loopPosInBeats < beat)
             {
                 if (loopPosInBeats >= beat - beatThreshold)
                 {
-                    Debug.Log("LoopPos just below beat");
+                    //Debug.Log("LoopPos just below beat");
                     return true;
                 } else if (loopPosInBeats < (beat-timeSig + 1) - beatThreshold)
                 {
-                    Debug.Log("LoopPos just above loop point");
+                    //Debug.Log("LoopPos just above loop point");
                     return true;
                 }
             } else
             {
-                Debug.Log("LoopPos just above beat");
+                //Debug.Log("LoopPos just above beat");
                 return true;
             }
 
         }
         else
         {
-            Debug.Log("Strange Case. Where is this beat? This should never happen");
+            Debug.LogError("Strange Case. Where is this beat? This should never happen");
         }
         return false;
     }
@@ -185,8 +197,8 @@ public class Conductor : MonoBehaviour {
     IEnumerator CountDown ()
     {
         yield return new WaitForSeconds(1f);
-
-        for (int i=0; i<3; i++)
+        getReadyAnimator.SetTrigger("getReady");
+        for (int i=0; i<1; i++)
         {
             Debug.Log("Countdown " + i.ToString());
             yield return new WaitForSeconds(1f);
@@ -194,6 +206,11 @@ public class Conductor : MonoBehaviour {
         
         StartMusic();
 
+    }
+
+    public void StopMetronome()
+    {
+        musicSource.volume = 0;
     }
     
 }

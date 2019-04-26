@@ -68,13 +68,32 @@
     <Compile Include="Assets\Scripts\SpinGame\RingParent.cs" />
     <Compile Include="Assets\Scripts\SpinGame\SequenceController.cs" />
     <Compile Include="Assets\Scripts\SpinGame\syncedSpin.cs" />
-    <Compile Include="Assets\Scripts\SpinGame\UI\CircleButton.cs" />
+    <Compile Include="Assets\Scripts\SpinGame\UI\LevelButton.cs" />
+    <Compile Include="Assets\Scripts\SpinGame\UI\Loopcontroller.cs" />
+    <Compile Include="Assets\Scripts\SpinGame\UI\MenuButton.cs" />
+    <Compile Include="Assets\Scripts\SpinGame\UI\MenuController.cs" />
     <Compile Include="Assets\Scripts\SpinGame\UI\MenuScript.cs" />
     <Compile Include="Assets\Scripts\SpinGame\UI\PauseScript.cs" />
-    <Compile Include="Assets\Scripts\SpinGame\UI\RingTransition.cs" />
     <Compile Include="Assets\Scripts\syncedAnimation.cs" />
     <Compile Include="Assets\Scripts\TappableObject.cs" />
     <Compile Include="Assets\Scripts\TriggerableObject.cs" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Graham/Documents/Unity/02 - Game Projects/06 - Rhythm Patterns/Rhythm Pattern/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

@@ -15,6 +15,7 @@ public class CircleScript : MonoBehaviour {
     public RingParent ringParent;
     public float beat;
     public KeyCode keyCode;
+    public int measure;
 
     private void Awake()
     {
@@ -64,8 +65,14 @@ public class CircleScript : MonoBehaviour {
         this.gameObject.transform.position = new Vector3(circleX, circleY, 0);
     }
 
+    public void SetClip(AudioClip audioClip)
+    {
+        audioSource.clip = audioClip;
+    }
+
     private void Update()
     {
+        if (!active) return;
         CheckForMissedNote();
         if (hittable && !hitThisLoop)
         {
@@ -131,7 +138,7 @@ public class CircleScript : MonoBehaviour {
         }
     }
 
-    public void ActivateRing()
+    public void ActivateCircle()
     {
         //Debug.Log("Activating Small Ring");
         active = true;
@@ -151,11 +158,11 @@ public class CircleScript : MonoBehaviour {
     {
         //Debug.Log("Deactivating Small Ring");
         if (didHit) CollapseDot();
+        if (active) CollapseCircle();
         didHit = false;
         hittable = false;
         active = false;
         hitThisLoop = false;
-        CollapseCircle();
         EventManager.StopListening(keyCode.ToString(), HitCircle);
     }
 

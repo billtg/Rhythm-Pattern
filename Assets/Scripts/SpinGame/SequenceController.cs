@@ -15,6 +15,9 @@ public class SequenceController : MonoBehaviour {
     public int activeRing = 0;
     public RingParent[] ringParents;
 
+    [Header("Line and UI")]
+    public Animator lineAnimator;
+
 
     private void Awake()
     {
@@ -24,6 +27,7 @@ public class SequenceController : MonoBehaviour {
     private void Start()
     {
 
+        PopulateTracks();
         //Populate Rings
         for (int i = 0; i < ringParents.Length; i++)
         {
@@ -40,6 +44,16 @@ public class SequenceController : MonoBehaviour {
             ringParents[i].ActivateRing(i);
             activeRings.Add(i);
         }
+        lineAnimator.SetTrigger("appear");
+    }
+
+    private void PopulateTracks()
+    {
+        for (int i = 0; i < ringParents.Length; i++)
+        {
+            Debug.Log("Populating Track " + i.ToString());
+            Conductor.instance.loops[i].clip = ringParents[i].ringTrack;
+        }
     }
 
     public void MissedNote()
@@ -47,7 +61,7 @@ public class SequenceController : MonoBehaviour {
         //Tell each active ring to reset its notes
         foreach(int index in activeRings)
         {
-            ringParents[index].ResetNotes();
+            ringParents[index].ResetCircles();
         }
     }
 
@@ -146,5 +160,7 @@ public class SequenceController : MonoBehaviour {
     public void SequenceComplete()
     {
         Debug.Log("Sequence Complete!");
+        lineAnimator.SetTrigger("complete");
+        Conductor.instance.StopMetronome();
     }
 }
