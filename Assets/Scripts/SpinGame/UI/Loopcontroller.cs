@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Loopcontroller : MonoBehaviour
 {
     public float volumeIncrement;
+    public bool loopsPlaying = false;
 
     public AudioSource[] danceLoops;
     public bool[] danceActive;
@@ -29,10 +31,24 @@ public class Loopcontroller : MonoBehaviour
         {
             hiphopActive[i] = false;
         }
+        PlayLoops();
+        loopsPlaying = true;
     }
 
-    private void Start()
+    private void OnEnable()
     {
+        Debug.Log("LoopController enabled");
+        if (AudioListener.pause == true)
+        {
+            Debug.Log("Unpausing audiolistener");
+            AudioListener.pause = false;
+        }
+        PlayLoops();
+    }
+
+    private void PlayLoops()
+    {
+        Debug.Log("Playing Loops");
         for (int i = 0; i < danceLoops.Length; i++)
         {
             danceLoops[i].Play();

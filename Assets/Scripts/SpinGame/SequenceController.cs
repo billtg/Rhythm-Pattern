@@ -42,10 +42,11 @@ public class SequenceController : MonoBehaviour {
             ringParent.ringKeycode = SongLoader.instance.activeSong.rings[i].ringKeycode;
             ringParent.ringTrack = SongLoader.instance.activeSong.rings[i].ringTrack;
             ringParent.ringAudio = SongLoader.instance.activeSong.rings[i].ringSample;
+            ringParent.isMelody = SongLoader.instance.activeSong.rings[i].useMelody;
             ringParent.beats = new List<float>();
             for (int j = 0; j < SongLoader.instance.activeSong.rings[i].beats.Count; j++)
             {
-                Debug.Log("Adding beat " + j.ToString() + " to ring " + i.ToString());
+                //Debug.Log("Adding beat " + j.ToString() + " to ring " + i.ToString());
                 ringParent.beats.Add(SongLoader.instance.activeSong.rings[i].beats[j]);
             }
 
@@ -194,7 +195,7 @@ public class SequenceController : MonoBehaviour {
         Debug.Log("Sequence Complete!");
         lineAnimator.SetTrigger("complete");
         Conductor.instance.StopMetronome();
-
+        UpdateSongsCompleted();
 
     }
 
@@ -203,7 +204,9 @@ public class SequenceController : MonoBehaviour {
         switch (SongLoader.instance.currentSongType)
         {
             case SongType.Dance:
-                PlayerPrefs.SetInt("Dance", SongLoader.instance.songIndex + 1);
+                int currentDanceIndex = PlayerPrefs.GetInt("Dance",0);
+                if (currentDanceIndex < SongLoader.instance.songIndex + 1)
+                    PlayerPrefs.SetInt("Dance", SongLoader.instance.songIndex + 1);
                 break;
             case SongType.Hiphop:
                 break;

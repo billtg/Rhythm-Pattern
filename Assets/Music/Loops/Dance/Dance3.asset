@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca36fbcc38f87314d9f095aad4e855f9, type: 3}
+  m_Name: Dance3
+  m_EditorClassIdentifier: 
+  bpm: 119
+  metronomeClip: {fileID: 8300000, guid: c97bd7b1d2fb40f49b6cea452d503bc3, type: 3}
+  timeSig: 16
+  beatThreshold: 0.45
+  simultaneousRings: 1
+  rings:
+  - notesToTelegraph: 2
+    ringKeycode: 274
+    ringTrack: {fileID: 8300000, guid: ebeb76bb007b79f47b86bb24543f14c2, type: 3}
+    ringSample: {fileID: 8300000, guid: d06b9dcede76deb428359d4298fec028, type: 3}
+    useMelody: 0
+    beats:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    melodyNotes: []
+  - notesToTelegraph: 2
+    ringKeycode: 275
+    ringTrack: {fileID: 8300000, guid: 515d770dc77e5d84c8f76f5dca540e94, type: 3}
+    ringSample: {fileID: 8300000, guid: 3994c3e52b64c5f409ce160cf25c1e4a, type: 3}
+    useMelody: 0
+    beats:
+    - 2
+    - 4
+    - 6
+    - 8
+    - 10
+    - 12
+    - 14
+    - 16
+    melodyNotes: []
+  - notesToTelegraph: 2
+    ringKeycode: 273
+    ringTrack: {fileID: 8300000, guid: 39f779d62b11ec94b8811f5f0d4ab3ce, type: 3}
+    ringSample: {fileID: 8300000, guid: 43a46eb77b8ae4941a0d84415723c6ca, type: 3}
+    useMelody: 0
+    beats:
+    - 1.5
+    - 2.5
+    - 3.5
+    - 4.5
+    - 5.5
+    - 6.5
+    - 7.5
+    - 8.5
+    - 9.5
+    - 10.5
+    - 11.5
+    - 12.5
+    - 13.5
+    - 14.5
+    - 15.5
+    - 16.5
+    melodyNotes: []
+  - notesToTelegraph: 4
+    ringKeycode: 276
+    ringTrack: {fileID: 8300000, guid: 080c28cf35fb4154fba65b88ea1362ee, type: 3}
+    ringSample: {fileID: 8300000, guid: 0f70db8cc5d2d104e8031cd8997f5d6c, type: 3}
+    useMelody: 1
+    beats:
+    - 1
+    - 2.5
+    - 3.5
+    - 4.5
+    - 5
+    - 6.5
+    - 7.5
+    - 8.5
+    - 9
+    - 10.5
+    - 11.5
+    - 12.5
+    - 13
+    - 14.5
+    - 15.5
+    - 16.5
+    melodyNotes:
+    - {fileID: 8300000, guid: 5a042b27e75683d42971c9cd57d830fe, type: 3}
+    - {fileID: 8300000, guid: 5a042b27e75683d42971c9cd57d830fe, type: 3}
+    - {fileID: 8300000, guid: f246405efd217f34cb4d5af2fb69a0a1, type: 3}
+    - {fileID: 8300000, guid: dc6c62ab0b23ec14fb8057e726fc32b3, type: 3}
+    - {fileID: 8300000, guid: 5a042b27e75683d42971c9cd57d830fe, type: 3}
+    - {fileID: 8300000, guid: 5a042b27e75683d42971c9cd57d830fe, type: 3}
+    - {fileID: 8300000, guid: f246405efd217f34cb4d5af2fb69a0a1, type: 3}
+    - {fileID: 8300000, guid: dc6c62ab0b23ec14fb8057e726fc32b3, type: 3}
+    - {fileID: 8300000, guid: 5a042b27e75683d42971c9cd57d830fe, type: 3}
+    - {fileID: 8300000, guid: 5a042b27e75683d42971c9cd57d830fe, type: 3}
+    - {fileID: 8300000, guid: f246405efd217f34cb4d5af2fb69a0a1, type: 3}
+    - {fileID: 8300000, guid: dc6c62ab0b23ec14fb8057e726fc32b3, type: 3}
+    - {fileID: 8300000, guid: 5a042b27e75683d42971c9cd57d830fe, type: 3}
+    - {fileID: 8300000, guid: 5a042b27e75683d42971c9cd57d830fe, type: 3}
+    - {fileID: 8300000, guid: f246405efd217f34cb4d5af2fb69a0a1, type: 3}
+    - {fileID: 8300000, guid: dc6c62ab0b23ec14fb8057e726fc32b3, type: 3}
+  - notesToTelegraph: 3
+    ringKeycode: 273
+    ringTrack: {fileID: 8300000, guid: a106640fffbae644584779191d4a9715, type: 3}
+    ringSample: {fileID: 8300000, guid: 0f70db8cc5d2d104e8031cd8997f5d6c, type: 3}
+    useMelody: 1
+    beats:
+    - 1
+    - 1.5
+    - 2
+    - 3
+    - 3.75
+    - 4.5
+    - 5
+    - 5.5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 9.5
+    - 10
+    - 11
+    - 11.75
+    - 12.5
+    - 13
+    - 13.5
+    - 14
+    - 14.5
+    - 16
+    melodyNotes:
+    - {fileID: 8300000, guid: 40fd99475099cdc48972a2c490273980, type: 3}
+    - {fileID: 8300000, guid: 3d6e18d022d8ef649bd09dc54ff6c482, type: 3}
+    - {fileID: 8300000, guid: 1aa1a5986941d6f4eb86e0e700465146, type: 3}
+    - {fileID: 8300000, guid: c0a2fac7cc7bdcc4091c57d8c85d6801, type: 3}
+    - {fileID: 8300000, guid: 24515ce378462904794041cf5673b885, type: 3}
+    - {fileID: 8300000, guid: def0dd59b5078e344828677b66da7a99, type: 3}
+    - {fileID: 8300000, guid: 40fd99475099cdc48972a2c490273980, type: 3}
+    - {fileID: 8300000, guid: 3d6e18d022d8ef649bd09dc54ff6c482, type: 3}
+    - {fileID: 8300000, guid: 1aa1a5986941d6f4eb86e0e700465146, type: 3}
+    - {fileID: 8300000, guid: 40fd99475099cdc48972a2c490273980, type: 3}
+    - {fileID: 8300000, guid: 40fd99475099cdc48972a2c490273980, type: 3}
+    - {fileID: 8300000, guid: 40fd99475099cdc48972a2c490273980, type: 3}
+    - {fileID: 8300000, guid: 3d6e18d022d8ef649bd09dc54ff6c482, type: 3}
+    - {fileID: 8300000, guid: 1aa1a5986941d6f4eb86e0e700465146, type: 3}
+    - {fileID: 8300000, guid: c0a2fac7cc7bdcc4091c57d8c85d6801, type: 3}
+    - {fileID: 8300000, guid: 24515ce378462904794041cf5673b885, type: 3}
+    - {fileID: 8300000, guid: def0dd59b5078e344828677b66da7a99, type: 3}
+    - {fileID: 8300000, guid: 40fd99475099cdc48972a2c490273980, type: 3}
+    - {fileID: 8300000, guid: 3d6e18d022d8ef649bd09dc54ff6c482, type: 3}
+    - {fileID: 8300000, guid: 1aa1a5986941d6f4eb86e0e700465146, type: 3}
+    - {fileID: 8300000, guid: 3d6e18d022d8ef649bd09dc54ff6c482, type: 3}
+    - {fileID: 8300000, guid: 40fd99475099cdc48972a2c490273980, type: 3}
+  - notesToTelegraph: 2
+    ringKeycode: 275
+    ringTrack: {fileID: 8300000, guid: c55d6d33c7d9ce247b7316a2e435afee, type: 3}
+    ringSample: {fileID: 8300000, guid: 0f70db8cc5d2d104e8031cd8997f5d6c, type: 3}
+    useMelody: 1
+    beats:
+    - 1.5
+    - 2.5
+    - 5.5
+    - 6.5
+    - 9.5
+    - 10.5
+    - 13
+    - 13.5
+    melodyNotes:
+    - {fileID: 8300000, guid: a29aa51cf9343af4e8933bc3c812c291, type: 3}
+    - {fileID: 8300000, guid: bfdf01efda05c954ab25528709289ebf, type: 3}
+    - {fileID: 8300000, guid: bfdf01efda05c954ab25528709289ebf, type: 3}
+    - {fileID: 8300000, guid: de01fcece1cf70f4c81d99c2ec7ecd6f, type: 3}
+    - {fileID: 8300000, guid: de01fcece1cf70f4c81d99c2ec7ecd6f, type: 3}
+    - {fileID: 8300000, guid: 77d06dea85c59854898a340de61ec1c3, type: 3}
+    - {fileID: 8300000, guid: 77d06dea85c59854898a340de61ec1c3, type: 3}
+    - {fileID: 8300000, guid: de01fcece1cf70f4c81d99c2ec7ecd6f, type: 3}

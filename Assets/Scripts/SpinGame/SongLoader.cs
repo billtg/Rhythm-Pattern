@@ -16,7 +16,13 @@ public class SongLoader : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+        {
+            Debug.Log("Double songloader instance");
+            Destroy(gameObject);
+        }
         DontDestroyOnLoad(this.gameObject);
     }
 

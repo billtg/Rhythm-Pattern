@@ -1,18 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MenuController : MonoBehaviour
 {
     public MenuScript[] menuScripts;
     public Animator animator;
     public static MenuController instance;
+    public TextMeshPro levelsBeaten;
 
     private void Awake()
     {
         instance = this;
         animator = GetComponent<Animator>();
         menuScripts = GetComponentsInChildren<MenuScript>(true);
+        UpdateDebugInfo();
+    }
+
+    private void UpdateDebugInfo()
+    {
+        
     }
 
     public void Start()

@@ -26,6 +26,7 @@ public class SongObject : ScriptableObject
         public KeyCode ringKeycode;
         public AudioClip ringTrack;
         public AudioClip ringSample;
+        public bool useMelody;
         public List<float> beats;
         public List<AudioClip> melodyNotes;
     }

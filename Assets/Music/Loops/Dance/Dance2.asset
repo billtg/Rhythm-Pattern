@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca36fbcc38f87314d9f095aad4e855f9, type: 3}
+  m_Name: Dance2
+  m_EditorClassIdentifier: 
+  bpm: 110
+  metronomeClip: {fileID: 8300000, guid: c87304b31d03a7f42bcd4ee766d32c23, type: 3}
+  timeSig: 8
+  beatThreshold: 0.45
+  simultaneousRings: 1
+  rings:
+  - notesToTelegraph: 2
+    ringKeycode: 273
+    ringTrack: {fileID: 8300000, guid: b4952255b19a51b48bb2956b8d0743ef, type: 3}
+    ringSample: {fileID: 8300000, guid: 3b7defca2677eed4cb55e9300565f9c3, type: 3}
+    useMelody: 0
+    beats:
+    - 1.5
+    - 2.5
+    - 3.5
+    - 4.5
+    - 5.5
+    - 6.5
+    - 7.5
+    - 8.5
+    melodyNotes: []
+  - notesToTelegraph: 2
+    ringKeycode: 274
+    ringTrack: {fileID: 8300000, guid: 0192a6ed67fccb548b6f3647ef999ba9, type: 3}
+    ringSample: {fileID: 8300000, guid: 4b36d4d8dec47ac40ab0e8acd3520acd, type: 3}
+    useMelody: 0
+    beats:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    melodyNotes: []
+  - notesToTelegraph: 2
+    ringKeycode: 275
+    ringTrack: {fileID: 8300000, guid: 248477d3b0a2dcb46bff2270a39ff43d, type: 3}
+    ringSample: {fileID: 8300000, guid: c7adbd1e38753494ca9389b832776e28, type: 3}
+    useMelody: 0
+    beats:
+    - 2
+    - 4
+    - 6
+    - 8
+    melodyNotes: []
+  - notesToTelegraph: 3
+    ringKeycode: 273
+    ringTrack: {fileID: 8300000, guid: afd86ea50ee00874db9e23a1864e50f2, type: 3}
+    ringSample: {fileID: 8300000, guid: 0f70db8cc5d2d104e8031cd8997f5d6c, type: 3}
+    useMelody: 1
+    beats:
+    - 1
+    - 1.5
+    - 2
+    - 2.5
+    - 3.25
+    - 4
+    - 4.5
+    - 5
+    - 5.5
+    - 6
+    - 6.5
+    - 7.25
+    - 8
+    - 8.5
+    melodyNotes:
+    - {fileID: 8300000, guid: 7eb5c5c146edc4b46ae0991448af11d2, type: 3}
+    - {fileID: 8300000, guid: 022b8ceaf9fe7e343819b69961a0c771, type: 3}
+    - {fileID: 8300000, guid: 6a7f3f51c1a5d7f46bf6ecda480d84f6, type: 3}
+    - {fileID: 8300000, guid: 5311069a8b355204683ccb47e894fbb0, type: 3}
+    - {fileID: 8300000, guid: 6a7f3f51c1a5d7f46bf6ecda480d84f6, type: 3}
+    - {fileID: 8300000, guid: 022b8ceaf9fe7e343819b69961a0c771, type: 3}
+    - {fileID: 8300000, guid: 7eb5c5c146edc4b46ae0991448af11d2, type: 3}
+    - {fileID: 8300000, guid: 7eb5c5c146edc4b46ae0991448af11d2, type: 3}
+    - {fileID: 8300000, guid: 022b8ceaf9fe7e343819b69961a0c771, type: 3}
+    - {fileID: 8300000, guid: 6a7f3f51c1a5d7f46bf6ecda480d84f6, type: 3}
+    - {fileID: 8300000, guid: 5311069a8b355204683ccb47e894fbb0, type: 3}
+    - {fileID: 8300000, guid: 530914b8f4c2217489aa9c010a4ea9be, type: 3}
+    - {fileID: 8300000, guid: 0d20c06e631486544b319ddb9bbd2448, type: 3}
+    - {fileID: 8300000, guid: e88702aaa2da2f34c843cd87e7841af8, type: 3}
