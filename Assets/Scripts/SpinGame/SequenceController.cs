@@ -194,6 +194,8 @@ public class SequenceController : MonoBehaviour {
     {
         Debug.Log("Sequence Complete!");
         lineAnimator.SetTrigger("complete");
+        Conductor.instance.SequenceComplete();
+        MiddleButton.instance.SequenceComplete();
         Conductor.instance.StopMetronome();
         UpdateSongsCompleted();
 

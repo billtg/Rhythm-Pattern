@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\SpinGame\UI\MenuButton.cs" />
     <Compile Include="Assets\Scripts\SpinGame\UI\MenuController.cs" />
     <Compile Include="Assets\Scripts\SpinGame\UI\MenuScript.cs" />
+    <Compile Include="Assets\Scripts\SpinGame\UI\MiddleButton.cs" />
     <Compile Include="Assets\Scripts\SpinGame\UI\PauseScript.cs" />
     <Compile Include="Assets\Scripts\syncedAnimation.cs" />
     <Compile Include="Assets\Scripts\TappableObject.cs" />

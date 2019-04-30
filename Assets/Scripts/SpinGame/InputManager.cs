@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour {
     public KeyCode down;
     public KeyCode left;
     public KeyCode pause;
+    public KeyCode assist;
 
     private void Update()
     {
@@ -37,6 +38,18 @@ public class InputManager : MonoBehaviour {
             {
                 Debug.Log("Left Pushed on loop beat:" + Conductor.instance.loopPosInBeats.ToString());
                 EventManager.TriggerEvent(left.ToString());
+            }
+
+            if (Input.GetKeyDown(assist))
+            {
+                Debug.Log("Assist started");
+                EventManager.TriggerEvent("assistStart");
+            }
+
+            if (Input.GetKeyUp(assist))
+            {
+                Debug.Log("Assist stopped");
+                EventManager.TriggerEvent("assistStop");
             }
         }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Conductor : MonoBehaviour {
 
@@ -37,7 +38,8 @@ public class Conductor : MonoBehaviour {
 
     //UI
     public Text loopText;
-    public Animator getReadyAnimator;
+    public TextMeshPro announcementText;
+    public Animator announcementAnimator;
 
     //static note information
     public float timeSig;
@@ -208,7 +210,7 @@ public class Conductor : MonoBehaviour {
     IEnumerator CountDown ()
     {
         yield return new WaitForSeconds(1f);
-        getReadyAnimator.SetTrigger("getReady");
+        announcementAnimator.SetTrigger("getReady");
         for (int i=0; i<1; i++)
         {
             Debug.Log("Countdown " + i.ToString());
@@ -217,6 +219,14 @@ public class Conductor : MonoBehaviour {
         
         StartMusic();
 
+    }
+
+    public void SequenceComplete()
+    {
+        //Change the middle button to a back button
+        //Pop up a 'Complete' announcement
+        announcementText.text = "Complete";
+        announcementAnimator.SetTrigger("Complete");
     }
 
     public void StopMetronome()

@@ -77,7 +77,9 @@ public class LevelButton : MonoBehaviour
     {
         if (!clickable) return;
 
-        Debug.Log("Ding!");
+        //Stop the music
+        clickable = false;
+        Loopcontroller.instance.SongStop(songType, songNumber);
         //Load the song up into the main scenes
         SongLoader.instance.LoadScene(songNumber, songType);
         Debug.Log("Loading Main Scene");

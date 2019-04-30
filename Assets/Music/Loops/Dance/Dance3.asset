@@ -118,7 +118,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 5a042b27e75683d42971c9cd57d830fe, type: 3}
     - {fileID: 8300000, guid: f246405efd217f34cb4d5af2fb69a0a1, type: 3}
     - {fileID: 8300000, guid: dc6c62ab0b23ec14fb8057e726fc32b3, type: 3}
-  - notesToTelegraph: 3
+  - notesToTelegraph: 4
     ringKeycode: 273
     ringTrack: {fileID: 8300000, guid: a106640fffbae644584779191d4a9715, type: 3}
     ringSample: {fileID: 8300000, guid: 0f70db8cc5d2d104e8031cd8997f5d6c, type: 3}

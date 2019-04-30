@@ -14,6 +14,8 @@ public class RingParent : MonoBehaviour {
     public bool isDone = false;
     public AudioClip ringTrack;
     public bool isMelody = false;
+    public bool assistMode = false;
+    public bool assistOn = false;
 
     [Header("Circle Information")]
     public CircleScript[] circleScripts;
@@ -100,13 +102,9 @@ public class RingParent : MonoBehaviour {
 
         //Activate first circles in the next measure
         ResetCircles();
-        //int index = FindNextCircleAfterThisMeasure(GiveMeasure(Conductor.instance.loopPosInBeats));
-        //for (int i = 0; i < notesToTelegraph; i++)
-        //{
-        //    circleScripts[i].ActivateCircle();
-        //}
-        //circleScripts[0].EnableCircle();
-        //currentCircle = notesToTelegraph;
+
+        //Listen for assist mode
+        EventManager.StartListening("assistStart", AssistOn);
     }
 
     public void CheckForCompleteRing()
@@ -154,6 +152,8 @@ public class RingParent : MonoBehaviour {
         expandRing.SetTrigger("Expand");
         //Reduce the dots in
         animator.SetInteger("Reduction", sequenceController.activeRing);
+        //Disable assist mode
+        EventManager.StopListening("assistStart", AssistOn);
     }
 
 
@@ -244,5 +244,21 @@ public class RingParent : MonoBehaviour {
         //You should never get here. Return 0 and give an error
         Debug.LogError("Error, didn't find a circle. This should never happen. Activating the first circle instead.");
         return 0;
+    }
+
+    public void AssistOn()
+    {
+        Debug.Log("Ring activating assist mode");
+        assistMode = true;
+        EventManager.StopListening("assistStart",AssistOn);
+        EventManager.StartListening("assistStop", AssistOff);
+    }
+
+    public void AssistOff()
+    {
+        Debug.Log("Ring deactivating assist mode");
+        assistMode = false;
+        EventManager.StopListening("assistStop", AssistOff);
+        EventManager.StartListening("assistStart", AssistOn);
     }
 }

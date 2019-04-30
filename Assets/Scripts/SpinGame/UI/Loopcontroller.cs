@@ -96,4 +96,17 @@ public class Loopcontroller : MonoBehaviour
                 break;
         }
     }
+
+    public void SongStop(SongType songType, int songNumber)
+    {
+        switch (songType)
+        {
+            case SongType.Dance:
+                danceLoops[songNumber - 1].volume = 0;
+                break;
+            case SongType.Hiphop:
+                hiphopLoops[songNumber - 1].volume = 0;
+                break;
+        }
+    }
 }
