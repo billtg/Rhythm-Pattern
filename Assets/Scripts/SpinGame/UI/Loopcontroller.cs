@@ -37,10 +37,10 @@ public class Loopcontroller : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("LoopController enabled");
+        //Debug.Log("LoopController enabled");
         if (AudioListener.pause == true)
         {
-            Debug.Log("Unpausing audiolistener");
+            //Debug.Log("Unpausing audiolistener");
             AudioListener.pause = false;
         }
         PlayLoops();
@@ -48,7 +48,7 @@ public class Loopcontroller : MonoBehaviour
 
     private void PlayLoops()
     {
-        Debug.Log("Playing Loops");
+        //Debug.Log("Playing Loops");
         for (int i = 0; i < danceLoops.Length; i++)
         {
             danceLoops[i].Play();

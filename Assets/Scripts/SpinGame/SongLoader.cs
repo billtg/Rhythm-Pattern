@@ -32,14 +32,14 @@ public class SongLoader : MonoBehaviour
         switch (songType)
         {
             case SongType.Dance:
-                Debug.Log("Setting Dance index");
+                //Debug.Log("Setting Dance index");
                 songIndex = songIndexUncategorized - 1;
                 break;
             case SongType.Hiphop:
                 songIndex = songIndexUncategorized + 3;
                 break;
         }
-        Debug.Log("Does this ever get here?");
+        //Debug.Log("Does this ever get here?");
         activeSong = songObjects[songIndex];
         currentSongType = songType;
     }

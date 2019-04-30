@@ -15,14 +15,7 @@ public class MenuController : MonoBehaviour
         instance = this;
         animator = GetComponent<Animator>();
         menuScripts = GetComponentsInChildren<MenuScript>(true);
-        UpdateDebugInfo();
     }
-
-    private void UpdateDebugInfo()
-    {
-        
-    }
-
     public void Start()
     {
         animator.SetTrigger("StartMenu");
@@ -30,7 +23,7 @@ public class MenuController : MonoBehaviour
 
     public void ActivateMenu(MenuNames menuName)
     {
-        Debug.Log("Deactivating Menus " + menuName);
+        //Debug.Log("Deactivating Menus " + menuName);
         //Deactivate any active menus
         for (int i = 0; i < menuScripts.Length; i++)
         {
@@ -39,7 +32,7 @@ public class MenuController : MonoBehaviour
         }
 
         //Activate the menuName menu
-        Debug.Log("Activating Menu " + menuName);
+        //Debug.Log("Activating Menu " + menuName);
         switch (menuName)
         {
             case MenuNames.main:

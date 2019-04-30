@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour {
     public KeyCode left;
     public KeyCode pause;
     public KeyCode assist;
+    public KeyCode assistAlt;
 
     private void Update()
     {
@@ -18,37 +19,49 @@ public class InputManager : MonoBehaviour {
         {
             if (Input.GetKeyDown(up))
             {
-                Debug.Log("Up Pushed on loop beat:" + Conductor.instance.loopPosInBeats.ToString());
+                //Debug.Log("Up Pushed on loop beat:" + Conductor.instance.loopPosInBeats.ToString());
                 EventManager.TriggerEvent(up.ToString());
             }
 
             if (Input.GetKeyDown(right))
             {
-                Debug.Log("Right Pushed on loop beat:" + Conductor.instance.loopPosInBeats.ToString());
+                //Debug.Log("Right Pushed on loop beat:" + Conductor.instance.loopPosInBeats.ToString());
                 EventManager.TriggerEvent(right.ToString());
             }
 
             if (Input.GetKeyDown(down))
             {
-                Debug.Log("Down Pushed on loop beat:" + Conductor.instance.loopPosInBeats.ToString());
+                //Debug.Log("Down Pushed on loop beat:" + Conductor.instance.loopPosInBeats.ToString());
                 EventManager.TriggerEvent(down.ToString());
             }
 
             if (Input.GetKeyDown(left))
             {
-                Debug.Log("Left Pushed on loop beat:" + Conductor.instance.loopPosInBeats.ToString());
+                //Debug.Log("Left Pushed on loop beat:" + Conductor.instance.loopPosInBeats.ToString());
                 EventManager.TriggerEvent(left.ToString());
             }
 
             if (Input.GetKeyDown(assist))
             {
-                Debug.Log("Assist started");
+                //Debug.Log("Assist started");
                 EventManager.TriggerEvent("assistStart");
             }
 
             if (Input.GetKeyUp(assist))
             {
-                Debug.Log("Assist stopped");
+                //Debug.Log("Assist stopped");
+                EventManager.TriggerEvent("assistStop");
+            }
+
+            if (Input.GetKeyDown(assistAlt))
+            {
+                //Debug.Log("Assist started");
+                EventManager.TriggerEvent("assistStart");
+            }
+
+            if (Input.GetKeyUp(assistAlt))
+            {
+                //Debug.Log("Assist stopped");
                 EventManager.TriggerEvent("assistStop");
             }
         }

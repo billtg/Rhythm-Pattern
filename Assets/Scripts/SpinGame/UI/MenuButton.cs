@@ -10,13 +10,11 @@ public class MenuButton : MonoBehaviour
 
     public void ResetButton()
     {
-        Debug.Log("Ding!");
         dotAnimator.SetTrigger("Deactivate");
     }
 
     private void OnMouseDown()
     {
-        Debug.Log("Click");
         dotAnimator.SetTrigger("Activate");
         MenuController.instance.ActivateMenu(menuButton);
     }

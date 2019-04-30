@@ -144,7 +144,7 @@ MonoBehaviour:
     - 12.5
     - 13.5
     - 14.5
-    - 16.5
+    - 15.5
     melodyNotes:
     - {fileID: 8300000, guid: b74ecbe0de51f7448af4ec625ccfe7ee, type: 3}
     - {fileID: 8300000, guid: 46392a4fdb141b04aaa5021ca16a7f04, type: 3}

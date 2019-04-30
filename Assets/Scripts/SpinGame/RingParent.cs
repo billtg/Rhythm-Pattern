@@ -16,6 +16,7 @@ public class RingParent : MonoBehaviour {
     public bool isMelody = false;
     public bool assistMode = false;
     public bool assistOn = false;
+    public bool ringActive = false;
 
     [Header("Circle Information")]
     public CircleScript[] circleScripts;
@@ -47,7 +48,7 @@ public class RingParent : MonoBehaviour {
             circleScript.ringParent = this;
 
             //locate the Circle based on it's beat
-            Debug.Log("Locating Circle " + i.ToString());
+            //Debug.Log("Locating Circle " + i.ToString());
             circleScript.LocateCircle(ringDistance);
 
             //Give it a measure
@@ -97,7 +98,8 @@ public class RingParent : MonoBehaviour {
 
     public void ActivateRing(int ringSpot)
     {
-        Debug.Log("Activating Big Ring");
+        //Debug.Log("Activating Big Ring");
+        ringActive = true;
         animator.SetTrigger("Activate");
 
         //Activate first circles in the next measure
@@ -148,6 +150,7 @@ public class RingParent : MonoBehaviour {
     public void CompleteRing()
     {
         //Debug.Log("Completing Ring");
+        ringActive = false;
         //Expand the ring
         expandRing.SetTrigger("Expand");
         //Reduce the dots in
@@ -159,7 +162,7 @@ public class RingParent : MonoBehaviour {
 
     public void MissedNote()
     {
-        Debug.Log("MissedNote Activated");
+        //Debug.Log("MissedNote Activated");
         //Tell sequence controller to reset the other activeRings
         sequenceController.MissedNote();
     }
@@ -174,7 +177,7 @@ public class RingParent : MonoBehaviour {
         } else
         {
             thisMeasure = (int)Conductor.instance.timeSig / 4;
-            Debug.Log("Measure used: " + thisMeasure.ToString());
+            //Debug.Log("Measure used: " + thisMeasure.ToString());
         }
         //index will give the circleScripts index for the next circle after this measure
         int index = FindNextCircleAfterThisMeasure(thisMeasure);
@@ -205,7 +208,7 @@ public class RingParent : MonoBehaviour {
 
     public int FindNextCircleAfterThisMeasure(int currentMeasure)
     {
-        Debug.Log("Searching for next circle");
+        //Debug.Log("Searching for next circle");
         int nextMeasure = currentMeasure + 1;
         if (nextMeasure > Conductor.instance.timeSig / 4)
             nextMeasure = 1;
@@ -219,16 +222,16 @@ public class RingParent : MonoBehaviour {
             {
                 if (circleScripts[i].measure == nextMeasure)
                 {
-                    Debug.Log("Found next circle with index: " + i.ToString());
+                    //Debug.Log("Found next circle with index: " + i.ToString());
                     return i;
                 }
             }
             //No circles in measure? bump up the nextMeasure
-            Debug.Log("Diddn't find circle. Trying next measure");
+            //Debug.Log("Diddn't find circle. Trying next measure");
             nextMeasure++;
             if (nextMeasure > Conductor.instance.timeSig / 4)
             {
-                Debug.Log("Next measure is 1");
+                //Debug.Log("Next measure is 1");
                 nextMeasure = 1;
             }
         }
@@ -237,7 +240,7 @@ public class RingParent : MonoBehaviour {
         {
             if (circleScripts[i].measure == nextMeasure)
             {
-                Debug.Log("Weird case. Next note is the start of this measure");
+                //Debug.Log("Weird case. Next note is the start of this measure");
                 return i;
             }
         }
@@ -248,17 +251,28 @@ public class RingParent : MonoBehaviour {
 
     public void AssistOn()
     {
-        Debug.Log("Ring activating assist mode");
+        if (!ringActive) return;
+        //Debug.Log("Ring activating assist mode");
         assistMode = true;
         EventManager.StopListening("assistStart",AssistOn);
         EventManager.StartListening("assistStop", AssistOff);
+        sequenceController.AssistActivate();
+
+        //Activate Assist for every circle
+        for (int i = 0; i < circleScripts.Length; i++)
+        {
+            circleScripts[i].AssistActivate();
+        }
     }
 
     public void AssistOff()
     {
-        Debug.Log("Ring deactivating assist mode");
+        if (!ringActive) return;
+        //Debug.Log("Ring deactivating assist mode");
         assistMode = false;
         EventManager.StopListening("assistStop", AssistOff);
         EventManager.StartListening("assistStart", AssistOn);
+        sequenceController.AssistDeactive();
+        ResetCircles();
     }
 }

@@ -33,7 +33,7 @@ public class SequenceController : MonoBehaviour {
         //Instantiate the rings
         for (int i = 0; i < SongLoader.instance.activeSong.rings.Length; i++)
         {
-            Debug.Log("Instantiating Ring " + i.ToString());
+            //Debug.Log("Instantiating Ring " + i.ToString());
             GameObject newRing = Instantiate(ringPrefab);
             RingParent ringParent = newRing.GetComponent<RingParent>();
             newRing.transform.SetParent(this.gameObject.transform);
@@ -64,13 +64,13 @@ public class SequenceController : MonoBehaviour {
         //Populate Rings
         for (int i = 0; i < ringParents.Length; i++)
         {
-            Debug.Log("Populating Ring " + i.ToString());
+            //Debug.Log("Populating Ring " + i.ToString());
             //Set the distance according to how many rings there are at one time
             float ringDistance = WhatDistance(i);
             ringParents[i].PopulateRing(ringDistance);
         }
 
-        Debug.Log("Activating intitial rings in sequence");
+        //Debug.Log("Activating intitial rings in sequence");
         for (int i = 0; i < simultaneousRings; i++)
         {
             //Activate each ring with its ringSpot (0 closest, then 1...)
@@ -84,7 +84,7 @@ public class SequenceController : MonoBehaviour {
     {
         for (int i = 0; i < ringParents.Length; i++)
         {
-            Debug.Log("Populating Track " + i.ToString());
+            //Debug.Log("Populating Track " + i.ToString());
             Conductor.instance.loops[i].clip = ringParents[i].ringTrack;
         }
     }
@@ -100,7 +100,7 @@ public class SequenceController : MonoBehaviour {
 
     public void CompleteRing()
     {
-        Debug.Log("checking for full completion");
+        //Debug.Log("checking for full completion");
         bool ringDone = true;
         foreach (int index in activeRings)
         {
@@ -109,7 +109,7 @@ public class SequenceController : MonoBehaviour {
         }
         if (ringDone)
         {
-            Debug.Log("Ring set complete.");
+            //Debug.Log("Ring set complete.");
             //Set the volume up on each ring's track and trigger its complete animations
             foreach (int index in activeRings)
             {
@@ -137,7 +137,7 @@ public class SequenceController : MonoBehaviour {
             }
         } else
         {
-            Debug.Log("Ring set not complete. waiting to completion");
+            //Debug.Log("Ring set not complete. waiting to completion");
         }
     }
 
@@ -146,10 +146,10 @@ public class SequenceController : MonoBehaviour {
         switch(simultaneousRings)
         {
             case 1:
-                Debug.Log("one ring at a time. Easy");
+                //Debug.Log("one ring at a time. Easy");
                 return mainDistance;
             case 2:
-                Debug.Log("Two rings at one time.");
+                //Debug.Log("Two rings at one time.");
                 if (index == 0 || index == 2 || index == 4 || index == 6)
                 {
                     return mainDistance;
@@ -162,7 +162,7 @@ public class SequenceController : MonoBehaviour {
                     return mainDistance;
                 }
             case 4:
-                Debug.Log("Four rings at one time");
+                //Debug.Log("Four rings at one time");
                 if (index == 0 || index == 4)
                 {
                     return mainDistance;
@@ -190,15 +190,33 @@ public class SequenceController : MonoBehaviour {
         }
     }
 
+    public void AssistActivate()
+    {
+        //Turn the track on for each active ring
+        //Set the volume up on each ring's track
+        foreach (int index in activeRings)
+        {
+            Conductor.instance.loops[index].volume = 1;
+        }
+    }
+
+    public void AssistDeactive()
+    {
+        //Set the volume down on each ring's track
+        foreach (int index in activeRings)
+        {
+            Conductor.instance.loops[index].volume = 0;
+        }
+    }
+
     public void SequenceComplete()
     {
-        Debug.Log("Sequence Complete!");
+        //Debug.Log("Sequence Complete!");
         lineAnimator.SetTrigger("complete");
         Conductor.instance.SequenceComplete();
         MiddleButton.instance.SequenceComplete();
         Conductor.instance.StopMetronome();
         UpdateSongsCompleted();
-
     }
 
     private void UpdateSongsCompleted()

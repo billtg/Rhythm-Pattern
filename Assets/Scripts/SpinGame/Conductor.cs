@@ -58,7 +58,7 @@ public class Conductor : MonoBehaviour {
 
     private void LoadParameters()
     {
-        Debug.Log("Loading conductor parameters");
+        //Debug.Log("Loading conductor parameters");
         beatTempo = SongLoader.instance.activeSong.bpm;
         musicSource.clip = SongLoader.instance.activeSong.metronomeClip;
         timeSig = SongLoader.instance.activeSong.timeSig;
@@ -130,7 +130,7 @@ public class Conductor : MonoBehaviour {
 
     void StartMusic()
     {
-        Debug.Log("Starting Music");
+        //Debug.Log("Starting Music");
         //Record the time when the audio starts
         dspSongTime = (float)AudioSettings.dspTime - startingPosition;
 
@@ -141,7 +141,7 @@ public class Conductor : MonoBehaviour {
         {
             loops[i].volume = 0;
             //loops[i].Play();
-            Debug.Log("Track starting");
+            //Debug.Log("Track starting");
             loops[i].PlayScheduled(dspSongTime + startingPosition + offsetToFirstBeat);
         }
 
@@ -213,7 +213,7 @@ public class Conductor : MonoBehaviour {
         announcementAnimator.SetTrigger("getReady");
         for (int i=0; i<1; i++)
         {
-            Debug.Log("Countdown " + i.ToString());
+            //Debug.Log("Countdown " + i.ToString());
             yield return new WaitForSeconds(1f);
         }
         

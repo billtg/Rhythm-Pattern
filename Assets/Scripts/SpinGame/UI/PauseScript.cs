@@ -15,7 +15,7 @@ public class PauseScript : MonoBehaviour
 
     public void Options()
     {
-        Debug.Log("Sorry, no options yet");
+        //Debug.Log("Sorry, no options yet");
     }
 
     public void MainMenu()

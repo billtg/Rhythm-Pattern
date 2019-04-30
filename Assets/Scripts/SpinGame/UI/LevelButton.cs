@@ -14,6 +14,11 @@ public class LevelButton : MonoBehaviour
 
     private void Awake()
     {
+        DetermineLevelStatus();
+    }
+
+    public void DetermineLevelStatus()
+    {
         //Figure out if this level is open, closed, or beaten
         switch (songType)
         {

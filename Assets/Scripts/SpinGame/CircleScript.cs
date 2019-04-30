@@ -16,6 +16,7 @@ public class CircleScript : MonoBehaviour {
     public float beat;
     public KeyCode keyCode;
     public int measure;
+    public GameObject arrow;
 
     private void Awake()
     {
@@ -45,7 +46,7 @@ public class CircleScript : MonoBehaviour {
                 this.gameObject.transform.Rotate(new Vector3(0, 0, 90));
                 break;
             default:
-                Debug.Log("Incorrect arrow key assignment!");
+                Debug.LogError("Incorrect arrow key assignment!");
                 break;
         }
 
@@ -142,6 +143,7 @@ public class CircleScript : MonoBehaviour {
     {
         //Debug.Log("Activating Small Ring");
         active = true;
+        if (!arrow.activeInHierarchy) arrow.SetActive(true);
         ExpandCircle();
     }
 
@@ -176,6 +178,17 @@ public class CircleScript : MonoBehaviour {
         EventManager.StopListening(keyCode.ToString(), HitCircle);
     }
 
+    public void AssistActivate()
+    {
+        if (!active) ActivateCircle();
+        if (hittable) hittable = false;
+        if (didHit)
+        {
+            CollapseDot();
+            didHit = false;
+        }
+        arrow.SetActive(false);
+    }
 
     //
     //Animation Triggers
