@@ -27,6 +27,7 @@ public class LevelButton : MonoBehaviour
                 CheckLevel(beatenSongsDance);
                 break;
             case SongType.Hiphop:
+                int beatenDanceCheck = PlayerPrefs.GetInt("Dance", 0);
                 int beatenSongsHiphop = PlayerPrefs.GetInt("Hiphop", 0);
                 CheckLevel(beatenSongsHiphop);
                 break;
@@ -94,6 +95,7 @@ public class LevelButton : MonoBehaviour
     private void OnMouseOver()
     {
         if (!clickable) return;
+        Debug.Log("Hovering");
         //Set the volume up on this track
         Loopcontroller.instance.TrackActive(songType, songNumber, true);
     }

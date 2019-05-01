@@ -229,6 +229,9 @@ public class SequenceController : MonoBehaviour {
                     PlayerPrefs.SetInt("Dance", SongLoader.instance.songIndex + 1);
                 break;
             case SongType.Hiphop:
+                int currentHiphopIndex = PlayerPrefs.GetInt("Hiphop", 0);
+                if (currentHiphopIndex < SongLoader.instance.songIndex - 3)
+                    PlayerPrefs.SetInt("Hiphop", SongLoader.instance.songIndex - 3);
                 break;
         }
     }

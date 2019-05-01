@@ -53,6 +53,10 @@ public class Loopcontroller : MonoBehaviour
         {
             danceLoops[i].Play();
         }
+        for (int i = 0; i <hiphopLoops.Length; i++)
+        {
+            hiphopLoops[i].Play();
+        }
     }
 
     private void Update()
@@ -68,6 +72,13 @@ public class Loopcontroller : MonoBehaviour
                     danceLoops[i].volume += volumeIncrement;
                 }
             }
+            if (hiphopActive[i])
+            {
+                if (hiphopLoops[i].volume < 1.0)
+                {
+                    hiphopLoops[i].volume += volumeIncrement;
+                }
+            }
         }
 
         //Turn down the inactive track volumes
@@ -75,10 +86,18 @@ public class Loopcontroller : MonoBehaviour
         {
             if (!danceActive[i])
             {
-                //Turn the volume up more
+                //Turn the volume down
                 if (danceLoops[i].volume > 0)
                 {
                     danceLoops[i].volume -= volumeIncrement;
+                }
+            }
+
+            if (!hiphopActive[i])
+            {
+                if (hiphopLoops[i].volume > 0)
+                {
+                    hiphopLoops[i].volume -= volumeIncrement;
                 }
             }
         }
