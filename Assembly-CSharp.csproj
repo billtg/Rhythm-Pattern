@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\SpinGame\SongObject.cs" />
     <Compile Include="Assets\Scripts\SpinGame\syncedSpin.cs" />
     <Compile Include="Assets\Scripts\SpinGame\UI\LevelButton.cs" />
+    <Compile Include="Assets\Scripts\SpinGame\UI\LevelRing.cs" />
     <Compile Include="Assets\Scripts\SpinGame\UI\Loopcontroller.cs" />
     <Compile Include="Assets\Scripts\SpinGame\UI\MenuButton.cs" />
     <Compile Include="Assets\Scripts\SpinGame\UI\MenuController.cs" />

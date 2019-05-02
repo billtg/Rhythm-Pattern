@@ -30,7 +30,7 @@ MonoBehaviour:
     - 6
     - 8
     melodyNotes: []
-  - notesToTelegraph: 2
+  - notesToTelegraph: 1
     ringKeycode: 275
     ringTrack: {fileID: 8300000, guid: 3cb5a7ea23b37c44c81d0db5cf4a6244, type: 3}
     ringSample: {fileID: 8300000, guid: 0deec97f664fffe479fa67c04cbb3633, type: 3}
