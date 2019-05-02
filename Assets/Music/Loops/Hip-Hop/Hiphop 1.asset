@@ -92,12 +92,10 @@ MonoBehaviour:
     useMelody: 1
     beats:
     - 1
-    - 1.75
     - 2.5
     - 4
     - 6
     melodyNotes:
-    - {fileID: 8300000, guid: 17ac2ed4b3f2c0e44b2728c184c7e1d7, type: 3}
     - {fileID: 8300000, guid: 17ac2ed4b3f2c0e44b2728c184c7e1d7, type: 3}
     - {fileID: 8300000, guid: 2b3a66df25e44c343b0c0f75d079f5e8, type: 3}
     - {fileID: 8300000, guid: 21c39e06e20764446a720a6b3f414560, type: 3}

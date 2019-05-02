@@ -161,6 +161,22 @@ public class SequenceController : MonoBehaviour {
                     Debug.LogError("Error, erroneous ring index: " + index.ToString());
                     return mainDistance;
                 }
+            case 3:
+                if (index == 0 || index == 3 || index == 6)
+                {
+                    return mainDistance;
+                } else if (index == 1 || index == 4 || index == 7)
+                {
+                    return mainDistance + ringSpacing;
+                } else if (index == 2 || index == 5 || index == 8)
+                {
+                    return mainDistance + ringSpacing * 2;
+                }
+                else
+                {
+                    Debug.LogError("Error, erroneous ring index: " + index.ToString());
+                    return mainDistance;
+                }
             case 4:
                 //Debug.Log("Four rings at one time");
                 if (index == 0 || index == 4)

@@ -1875,7 +1875,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c890cb1c877a3eb4b96400c619ed872e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 15184cccc46821d4ebdbfc0f729abf19, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
@@ -2678,7 +2678,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 15184cccc46821d4ebdbfc0f729abf19, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c890cb1c877a3eb4b96400c619ed872e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
@@ -3018,11 +3018,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songIndex: 0
   songObjects:
-  - {fileID: 11400000, guid: c3073601a8f54944faf8e67d0207fc71, type: 2}
   - {fileID: 11400000, guid: a76215f831405f642b8b30dc2db69c1b, type: 2}
+  - {fileID: 11400000, guid: c3073601a8f54944faf8e67d0207fc71, type: 2}
   - {fileID: 11400000, guid: 5afd83d0f2aac844190b6b54b6237879, type: 2}
   - {fileID: 11400000, guid: c4d380165ad64f94483c7aa4759b74ea, type: 2}
   - {fileID: 11400000, guid: 9901c0b1c0fcda349a2b8fe18ccff70a, type: 2}
+  - {fileID: 11400000, guid: 5e4253aa7f2a6e544b7cabb63ab47f5d, type: 2}
+  - {fileID: 11400000, guid: 2a9b9a772d763bd4e8300f602d1c29b0, type: 2}
   currentSongType: 0
   activeSong: {fileID: 0}
   test: []
@@ -4935,7 +4937,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c890cb1c877a3eb4b96400c619ed872e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: edbb558ed26a4f74db87b7e212930a78, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
@@ -5742,7 +5744,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c890cb1c877a3eb4b96400c619ed872e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5b8654b82d42a024ab6ef9d0511c10e3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
