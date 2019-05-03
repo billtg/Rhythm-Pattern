@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class RingParent : MonoBehaviour {
     [Header("Sequence Controller Info")]
@@ -9,6 +10,7 @@ public class RingParent : MonoBehaviour {
     [Header("Ring information")]
     private Animator animator;
     public Animator expandRing;
+    public float ringSize;
     public int currentCircle;
     public int notesToTelegraph;
     public bool isDone = false;
@@ -17,6 +19,7 @@ public class RingParent : MonoBehaviour {
     public bool assistMode = false;
     public bool assistOn = false;
     public bool ringActive = false;
+    public AudioMixerGroup audioMixerGroup;
 
     [Header("Circle Information")]
     public CircleScript[] circleScripts;
@@ -33,6 +36,7 @@ public class RingParent : MonoBehaviour {
 
     public void PopulateRing(float ringDistance)
     {
+        ringSize = ringDistance;
         sequenceController = GetComponentInParent<SequenceController>();
         circleScripts = new CircleScript[beats.Count];
 
@@ -43,7 +47,7 @@ public class RingParent : MonoBehaviour {
             CircleScript circleScript = newCircle.GetComponent<CircleScript>();
 
             //Initialize the Circle
-            circleScript.Initialize(ringKeycode, beats[i], ringAudio);
+            circleScript.Initialize(ringKeycode, beats[i], ringAudio, audioMixerGroup);
             newCircle.transform.SetParent(this.transform);
             circleScript.ringParent = this;
 
@@ -152,7 +156,10 @@ public class RingParent : MonoBehaviour {
         //Debug.Log("Completing Ring");
         ringActive = false;
         //Expand the ring
-        expandRing.SetTrigger("Expand");
+        if (ringSize > 2)
+            expandRing.SetTrigger("Expand2");
+        else
+            expandRing.SetTrigger("Expand");
         //Reduce the dots in
         animator.SetInteger("Reduction", sequenceController.activeRing);
         //Disable assist mode

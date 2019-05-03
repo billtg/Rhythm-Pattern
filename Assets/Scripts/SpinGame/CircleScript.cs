@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Audio;
 
 public class CircleScript : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class CircleScript : MonoBehaviour {
     public bool hitThisLoop = false;
     public Animator animator;
     public Animator childAnimator;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     public RingParent ringParent;
     public float beat;
     public KeyCode keyCode;
@@ -24,12 +25,13 @@ public class CircleScript : MonoBehaviour {
         ringParent = GetComponentInParent<RingParent>();
         animator = GetComponent<Animator>();
     }
-
-    public void Initialize(KeyCode keyCode, float beat, AudioClip audioClip)
+    
+    public void Initialize(KeyCode keyCode, float beat, AudioClip audioClip, AudioMixerGroup audioMixerGroup)
     {
         this.keyCode = keyCode;
         this.beat = beat;
         audioSource.clip = audioClip;
+        audioSource.outputAudioMixerGroup = audioMixerGroup;
 
         //Set the arrow rotation
         switch(keyCode)
@@ -70,7 +72,7 @@ public class CircleScript : MonoBehaviour {
     {
         audioSource.clip = audioClip;
     }
-
+    
     private void Update()
     {
         if (!active) return;

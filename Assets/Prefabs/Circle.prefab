@@ -92,10 +92,10 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013029158237388}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -119,6 +119,7 @@ MonoBehaviour:
   hitThisLoop: 0
   animator: {fileID: 0}
   childAnimator: {fileID: 95101443669320316}
+  audioSource: {fileID: 0}
   ringParent: {fileID: 0}
   beat: 1
   keyCode: 274

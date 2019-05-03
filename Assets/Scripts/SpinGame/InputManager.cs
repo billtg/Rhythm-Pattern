@@ -71,10 +71,12 @@ public class InputManager : MonoBehaviour {
             if (!Conductor.paused)
             {
                 Conductor.paused = true;
+                MiddleButton.instance.Pause();
             }
             else
             {
                 Conductor.instance.Resume();
+                MiddleButton.instance.UnPause();
             }
         }
     }

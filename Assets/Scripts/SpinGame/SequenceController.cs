@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SequenceController : MonoBehaviour {
 
@@ -15,6 +16,7 @@ public class SequenceController : MonoBehaviour {
     public int activeRing = 0;
     public RingParent[] ringParents;
     public GameObject ringPrefab;
+    public AudioMixerGroup[] ringMixers;
 
     [Header("Line and UI")]
     public Animator lineAnimator;
@@ -61,22 +63,7 @@ public class SequenceController : MonoBehaviour {
     private void Start()
     {
         PopulateTracks();
-        //Populate Rings
-        for (int i = 0; i < ringParents.Length; i++)
-        {
-            //Debug.Log("Populating Ring " + i.ToString());
-            //Set the distance according to how many rings there are at one time
-            float ringDistance = WhatDistance(i);
-            ringParents[i].PopulateRing(ringDistance);
-        }
-
-        //Debug.Log("Activating intitial rings in sequence");
-        for (int i = 0; i < simultaneousRings; i++)
-        {
-            //Activate each ring with its ringSpot (0 closest, then 1...)
-            ringParents[i].ActivateRing(i);
-            activeRings.Add(i);
-        }
+        PopulateRings();
         lineAnimator.SetTrigger("appear");
     }
 
@@ -86,6 +73,28 @@ public class SequenceController : MonoBehaviour {
         {
             //Debug.Log("Populating Track " + i.ToString());
             Conductor.instance.loops[i].clip = ringParents[i].ringTrack;
+            Conductor.instance.loops[i].outputAudioMixerGroup = ringMixers[i];
+        }
+    }
+
+    public void PopulateRings()
+    {
+        //Populate Rings
+        for (int i = 0; i < ringParents.Length; i++)
+        {
+            //Debug.Log("Populating Ring " + i.ToString());
+            //Set the distance according to how many rings there are at one time
+            float ringDistance = WhatDistance(i);
+            ringParents[i].audioMixerGroup = ringMixers[i];
+            ringParents[i].PopulateRing(ringDistance);
+        }
+
+        //Debug.Log("Activating intitial rings in sequence");
+        for (int i = 0; i < simultaneousRings; i++)
+        {
+            //Activate each ring with its ringSpot (0 closest, then 1...)
+            ringParents[i].ActivateRing(i);
+            activeRings.Add(i);
         }
     }
 

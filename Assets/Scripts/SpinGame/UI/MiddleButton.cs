@@ -8,6 +8,10 @@ public class MiddleButton : MonoBehaviour
     public bool clickable = false;
     public static MiddleButton instance;
     public Animator animator;
+    public bool sequenceComplete;
+
+    public GameObject optionsCanvas;
+    public GameObject pauseCanvas;
 
     private void Awake()
     {
@@ -19,6 +23,18 @@ public class MiddleButton : MonoBehaviour
         //play the animation
         animator.SetTrigger("SongComplete");
         clickable = true;
+        sequenceComplete = true;
+    }
+
+    public void Pause ()
+    {
+        clickable = true;
+    }
+
+    public void UnPause()
+    {
+        if (!sequenceComplete)
+            clickable = false;
     }
 
     private void OnMouseEnter()
@@ -37,7 +53,28 @@ public class MiddleButton : MonoBehaviour
     {
         if (!clickable) return;
 
-        //Take it back to the main menu
-        SceneManager.LoadScene(0);
+        //Will only be clickable in pause menu or when song is finished
+        if (!Conductor.paused)
+        {
+            //Take it back to the main menu
+            Debug.Log("Maain Menu");
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            Debug.Log("Conductor not paused");
+            if (pauseCanvas.activeInHierarchy)
+            {
+                //resume playing
+                Conductor.instance.Resume();
+                UnPause();
+            }
+            else
+            {
+                //only occurs when on options screen
+                pauseCanvas.SetActive(true);
+                optionsCanvas.SetActive(false);
+            }
+        }
     }
 }
