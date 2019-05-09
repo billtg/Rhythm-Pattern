@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 548}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 498}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 1
-  controlID: 109
+  controlID: 16
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 498}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 0
-  controlID: 110
+  controlID: 17
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1488,7 +1488,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: c0260000
       m_LastClickedID: 0
       m_ExpandedIDs: d6fbffff
       m_RenameOverlay:
@@ -1552,20 +1552,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Music/Loops/Dance
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Music/Loops/Dance
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Graham\Documents\Unity\02 - Game Projects\06 - Rhythm
     Patterns\Rhythm Pattern
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 349}
-    m_SelectedIDs: da260000
-    m_LastClickedID: 9946
+    scrollPos: {x: 0, y: 170.20155}
+    m_SelectedIDs: 16280000
+    m_LastClickedID: 10262
     m_ExpandedIDs: 000000005026000078260000ee26000016280000182900001e290000562900006e2b00005c2c00006c2c0000802c0000d62c0000722d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1621,7 +1621,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000a22d00000a2b0000142a00002a370000962c00009a590000b4350000b66400000ca5f6ff5e2b0000342b00004e4300001c2f0000242f0000a0320000882e0000b44a000000000000383400004887feff5e2c000066390000cc2900001a2c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
