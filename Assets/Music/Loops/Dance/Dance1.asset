@@ -90,3 +90,69 @@ MonoBehaviour:
     - 11.5
     - 13
     melodyNotes: []
+  - notesToTelegraph: 2
+    ringKeycode: 276
+    ringTrack: {fileID: 8300000, guid: a536615053a5fc040886da98481d2566, type: 3}
+    ringSample: {fileID: 8300000, guid: dfc5e79a5d177e04682df99e59b5e8b5, type: 3}
+    useMelody: 1
+    beats:
+    - 1
+    - 5
+    - 8
+    - 9
+    - 10.5
+    - 13
+    - 14.5
+    - 16
+    melodyNotes:
+    - {fileID: 8300000, guid: dfc5e79a5d177e04682df99e59b5e8b5, type: 3}
+    - {fileID: 8300000, guid: 5595e500a8274724081948ff02e2939d, type: 3}
+    - {fileID: 8300000, guid: b032002626fbbaf4c94cc33758aa4b35, type: 3}
+    - {fileID: 8300000, guid: dccb4a32b7928e047afe5f726ebafa41, type: 3}
+    - {fileID: 8300000, guid: c12703ea40c2b2844893c7519e7c969e, type: 3}
+    - {fileID: 8300000, guid: dccb4a32b7928e047afe5f726ebafa41, type: 3}
+    - {fileID: 8300000, guid: c12703ea40c2b2844893c7519e7c969e, type: 3}
+    - {fileID: 8300000, guid: b032002626fbbaf4c94cc33758aa4b35, type: 3}
+  - notesToTelegraph: 4
+    ringKeycode: 273
+    ringTrack: {fileID: 8300000, guid: 8d0d11df790005c4090563201b916e84, type: 3}
+    ringSample: {fileID: 8300000, guid: c3ef36d6f1e14d242a3baa0bc763bd93, type: 3}
+    useMelody: 1
+    beats:
+    - 1
+    - 1.5
+    - 2.5
+    - 5
+    - 5.5
+    - 6.5
+    - 7.5
+    - 8
+    - 8.5
+    - 9
+    - 9.5
+    - 10.5
+    - 13
+    - 13.5
+    - 14.5
+    - 15.5
+    - 16
+    - 16.5
+    melodyNotes:
+    - {fileID: 8300000, guid: c3ef36d6f1e14d242a3baa0bc763bd93, type: 3}
+    - {fileID: 8300000, guid: e29336cded6b7f44aa819d9de10040ee, type: 3}
+    - {fileID: 8300000, guid: d0b2d69e227f6fd488761178f0b19962, type: 3}
+    - {fileID: 8300000, guid: c3ef36d6f1e14d242a3baa0bc763bd93, type: 3}
+    - {fileID: 8300000, guid: e29336cded6b7f44aa819d9de10040ee, type: 3}
+    - {fileID: 8300000, guid: d0b2d69e227f6fd488761178f0b19962, type: 3}
+    - {fileID: 8300000, guid: a81a4337a803a9d4ebd31ba4dc26017d, type: 3}
+    - {fileID: 8300000, guid: c3dd7d53a4a34e04d9b90e45d207c934, type: 3}
+    - {fileID: 8300000, guid: 9368ea07159e2c34fb0eab2b6643846d, type: 3}
+    - {fileID: 8300000, guid: 8f0093e842384724a9965b3a3875f358, type: 3}
+    - {fileID: 8300000, guid: 38d9f995f8349474e9f239f67e25263f, type: 3}
+    - {fileID: 8300000, guid: 896aa49088cd2ca449251aff697d4ee9, type: 3}
+    - {fileID: 8300000, guid: 8f0093e842384724a9965b3a3875f358, type: 3}
+    - {fileID: 8300000, guid: 38d9f995f8349474e9f239f67e25263f, type: 3}
+    - {fileID: 8300000, guid: 896aa49088cd2ca449251aff697d4ee9, type: 3}
+    - {fileID: 8300000, guid: 4f288a2e40993174a861412a0e25d74c, type: 3}
+    - {fileID: 8300000, guid: 149aa9ac04020954bac62a55793e278e, type: 3}
+    - {fileID: 8300000, guid: 89b77c6959703d34a822a6c5e22ef321, type: 3}

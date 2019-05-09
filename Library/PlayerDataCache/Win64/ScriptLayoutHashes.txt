@@ -1,9 +1,10 @@
 Win64
 PlayerPath?
-C:/Users/Graham/Documents/Unity/02 - Game Projects/06 - Rhythm Patterns/Rhythm Pattern/Builds/0.22 - Beta 2 build/Atomic Beats.exe
+C:/Users/Graham/Documents/Unity/02 - Game Projects/06 - Rhythm Patterns/Rhythm Pattern/Builds/1.0 - Release/Atomic Beats.exe
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/Main.unity
+Assets/Scenes/Tutorial.unity
 SceneListEnd?
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
@@ -114,12 +115,15 @@ e0ee4b3d4e27318934cc940a969d3d96 UnityEngine.Networking.dll:UnityEngine.Networki
 ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+61229538e2f2ad28589eb83a4d1e02ac Assembly-CSharp.dll:.PlayButton
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 143febebbed513fbe7dbe25b1c7a19e8 Assembly-CSharp.dll:.ResetButton
+819b59764f389471dfae3e571f8a9f6a Assembly-CSharp.dll:.TutorialAnimate
 9e6da2bbbbb0bb5ca4e930f1a7731dde Assembly-CSharp.dll:.syncedAnimation
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 94017dcc9f00fe671ea7dc427b4da011 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
+6de7d6b58806bcf94426e45ebdc32283 Assembly-CSharp.dll:.FullscreenButton
 992240e7728a55bf3c179d0c55d26dd9 Assembly-CSharp.dll:.CircleScript
 2348a879ab85bd84b73efab8d2b83931 Assembly-CSharp.dll:.MenuScript
 db76e63d3dc89e04e3c4069a7841d574 Assembly-CSharp.dll:.RingParent
@@ -148,6 +152,7 @@ d95c1c507d255c4f2a7193c80a04f361 Assembly-CSharp.dll:.LevelButton
 ad62c3422206fb8eea2488b8e011ee0c Assembly-CSharp.dll:.LevelRing
 aa82b3ce4c0c9b227036c0337315c5d3 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e51c09a4cc447f11db225afcd8e3e490 Unity.TextMeshPro.dll:TMPro.TMP_Settings
+de761b2837168a81abd2882f57e36205 Assembly-CSharp.dll:.VolumeController
 88cc9df3c6fc697bfbeacd24c0d6f2d7 UnityEngine.TestRunner.dll:UnityEngine.TestTools.BeforeAfterTestCommandState
 88cc9df3c6fc697bfbeacd24c0d6f2d7 UnityEngine.TestRunner.dll:UnityEngine.TestTools.EnumerableSetUpTearDownCommandState
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
@@ -165,7 +170,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
-c0e5587deaf11b3587feadef2b8fca0b Assembly-CSharp.dll:.MiddleButton
+f3971b60667429ef34f77d2351050e83 Assembly-CSharp.dll:.MiddleButton
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 4c6470c640e6ccd8cb74a21bf2cd2ac3 Assembly-CSharp.dll:.SongObject
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.EventManager
@@ -176,8 +181,7 @@ d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 452a4d5ca1358827fb14064cc61609c0 Assembly-CSharp.dll:.PauseScript
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
-538af707631e7fb32be28ac338a77e78 Assembly-CSharp.dll:.Conductor
+2d612da72291e498b763d215a78b81ec Assembly-CSharp.dll:.Conductor
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 30f3213a6e218a461fa00e428f22d3eb Assembly-CSharp.dll:.TriggerableObject
-6de7d6b58806bcf94426e45ebdc32283 Assembly-CSharp.dll:.FullscreenButton
-d835e37be8caf473a0d64dc941f2a2a8 Assembly-CSharp.dll:.VolumeController
+8edd43e549dcbf1b580cf8e396f89d83 Assembly-CSharp.dll:.TutorialController

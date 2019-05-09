@@ -28,6 +28,7 @@ public class LevelButton : MonoBehaviour
                 break;
             case SongType.Hiphop:
                 int beatenDanceCheck = PlayerPrefs.GetInt("Dance", 0);
+                if (beatenDanceCheck < 2) return;
                 int beatenSongsHiphop = PlayerPrefs.GetInt("Hiphop", 0);
                 CheckLevel(beatenSongsHiphop);
                 break;
@@ -87,9 +88,27 @@ public class LevelButton : MonoBehaviour
         clickable = false;
         Loopcontroller.instance.SongStop(songType, songNumber);
         //Load the song up into the main scenes
-        SongLoader.instance.LoadScene(songNumber, songType);
-        Debug.Log("Loading Main Scene");
-        SceneManager.LoadScene(1);
+        if (songNumber == 1 && songType == SongType.Dance)
+        {
+            //Check if it's the first time. If so, play tutorial
+            int firstTime = PlayerPrefs.GetInt("FirstTime", 0);
+            if (firstTime == 0)
+            {
+                Debug.Log("Loading Tutorial");
+                SongLoader.instance.LoadScene(5, SongType.Hiphop);
+                SceneManager.LoadScene(2);
+            } else
+            {
+                Debug.Log("Loading Main Scene");
+                SongLoader.instance.LoadScene(songNumber, songType);
+                SceneManager.LoadScene(1);
+            }
+        } else
+        {
+            Debug.Log("Loading Main Scene");
+            SongLoader.instance.LoadScene(songNumber, songType);
+            SceneManager.LoadScene(1);
+        }
     }
 
     private void OnMouseOver()

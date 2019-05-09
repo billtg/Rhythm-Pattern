@@ -47,6 +47,7 @@ public class Conductor : MonoBehaviour {
 
     //Instance
     public static Conductor instance;
+    public bool isTutorial = false;
 
     private void Awake()
     {

@@ -12,6 +12,7 @@ public class ResetButton : MonoBehaviour
         Debug.Log("Resetting Data");
         PlayerPrefs.SetInt("Dance", 0);
         PlayerPrefs.SetInt("Hiphop", 0);
+        PlayerPrefs.SetInt("FirstTime", 0);
         SceneManager.LoadScene(0);
     }
     private void OnMouseOver()

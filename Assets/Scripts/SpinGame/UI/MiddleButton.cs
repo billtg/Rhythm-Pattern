@@ -12,6 +12,7 @@ public class MiddleButton : MonoBehaviour
 
     public GameObject optionsCanvas;
     public GameObject pauseCanvas;
+    public GameObject backText;
 
     private void Awake()
     {
@@ -41,12 +42,14 @@ public class MiddleButton : MonoBehaviour
     {
         if (!clickable) return;
         this.transform.localScale = new Vector3(1.2f, 1.2f, 1);
+        backText.SetActive(true);
     }
 
     private void OnMouseExit()
     {
         if (!clickable) return;
         this.transform.localScale = Vector3.one;
+        backText.SetActive(false);
     }
 
     private void OnMouseDown()
@@ -57,7 +60,7 @@ public class MiddleButton : MonoBehaviour
         if (!Conductor.paused)
         {
             //Take it back to the main menu
-            Debug.Log("Maain Menu");
+            Debug.Log("Main Menu");
             SceneManager.LoadScene(0);
         }
         else
@@ -68,6 +71,9 @@ public class MiddleButton : MonoBehaviour
                 //resume playing
                 Conductor.instance.Resume();
                 UnPause();
+                //Also eliminate side effects from being highlighted
+                this.transform.localScale = Vector3.one;
+                backText.SetActive(false);
             }
             else
             {

@@ -239,7 +239,8 @@ public class SequenceController : MonoBehaviour {
         //Debug.Log("Sequence Complete!");
         lineAnimator.SetTrigger("complete");
         Conductor.instance.SequenceComplete();
-        MiddleButton.instance.SequenceComplete();
+        if (!Conductor.instance.isTutorial)
+            MiddleButton.instance.SequenceComplete();
         Conductor.instance.StopMetronome();
         UpdateSongsCompleted();
     }
@@ -254,6 +255,7 @@ public class SequenceController : MonoBehaviour {
                     PlayerPrefs.SetInt("Dance", SongLoader.instance.songIndex + 1);
                 break;
             case SongType.Hiphop:
+                if (Conductor.instance.isTutorial) return;
                 int currentHiphopIndex = PlayerPrefs.GetInt("Hiphop", 0);
                 if (currentHiphopIndex < SongLoader.instance.songIndex - 3)
                     PlayerPrefs.SetInt("Hiphop", SongLoader.instance.songIndex - 3);

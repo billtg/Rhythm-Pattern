@@ -68,15 +68,25 @@ public class InputManager : MonoBehaviour {
 
         if (Input.GetKeyDown(pause))
         {
-            if (!Conductor.paused)
+            if (Conductor.instance.isTutorial)
             {
-                Conductor.paused = true;
-                MiddleButton.instance.Pause();
+                PlayerPrefs.SetInt("FirstTime", 1);
+                Debug.Log("Loading Main Scene");
+                SongLoader.instance.LoadScene(1, SongType.Dance);
+                SceneManager.LoadScene(1);
             }
             else
             {
-                Conductor.instance.Resume();
-                MiddleButton.instance.UnPause();
+                if (!Conductor.paused)
+                {
+                    Conductor.paused = true;
+                    MiddleButton.instance.Pause();
+                }
+                else
+                {
+                    Conductor.instance.Resume();
+                    MiddleButton.instance.UnPause();
+                }
             }
         }
     }
