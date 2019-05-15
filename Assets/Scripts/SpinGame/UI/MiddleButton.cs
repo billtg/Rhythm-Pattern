@@ -59,9 +59,18 @@ public class MiddleButton : MonoBehaviour
         //Will only be clickable in pause menu or when song is finished
         if (!Conductor.paused)
         {
-            //Take it back to the main menu
-            Debug.Log("Main Menu");
-            SceneManager.LoadScene(0);
+            //Load the next song
+            Debug.Log("Check for end of songs");
+            if (SongLoader.instance.NextSong())
+            {
+                Debug.Log("Not at end of songs. Reloading Main with new songIndex");
+                SceneManager.LoadScene(1);
+            }
+            else
+            {
+                Debug.Log("End of songs. Load Main Menu");
+                SceneManager.LoadScene(0);
+            }
         }
         else
         {
