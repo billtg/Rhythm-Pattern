@@ -1,7 +1,4 @@
-Base path: C:/Program Files/Unity/Editor/Data
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
+Base path: 'C:/Unity/2019.3.1f1/Editor/Data', plugins path 'C:/Unity/2019.3.1f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 
 Quitting shader compiler process
